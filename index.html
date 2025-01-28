@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Application Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .hidden { display: none; }
+        .logos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .logos img {
+            max-width: 100px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .note {
+            text-align: center;
+            font-weight: bold;
+            color: #d9534f;
+            font-size: 1.2em;
+        }
+        .intro {
+            font-size: 1.1em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Logos Section -->
+        <div class="logos">
+            <img src="./bidr.png" alt="Logo 1">
+            <img src="./ziwr.png" alt="Logo 2">
+            <img src="./bgu.png" alt="Logo 3">
+        </div>
+
+        <!-- Application Title -->
+        <h1>Student Application Form</h1>
+
+        <!-- Welcome Paragraph -->
+        <p class="intro">
+            Thank you for your interest in applying to the Zuckerberg Institute for Water Research. While it is not mandatory, we strongly encourage applicants to contact 
+            a researcher at the institute prior to submitting their application. 
+            You can explore our researchers and their work on our website. We will review your application and reach out if it aligns with our current opportunities.
+        </p>
+        <p class="note">
+            Please ensure all required fields are completed to avoid delays in processing your application. If, for any reason, you are unable to fill out certain fields, 
+            kindly provide the missing information and an explanation in the comments section. Incomplete forms without an explanation may result in your application being deemed incomplete or not accepted.
+        </p>
+
+        <!-- Application Form -->
+        <form id="applicationForm" action="#" method="POST" enctype="multipart/form-data" class="mt-4">
+            <!-- Personal Details Section -->
+            <h3>Personal Details</h3>
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" required>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="dob" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="dob" name="dob" required>
+            </div>
+            <div class="mb-3">
+                <label for="nationality" class="form-label">Nationality</label>
+                <input type="text" class="form-control" id="nationality" name="nationality" required>
+            </div>
+            <div class="mb-3">
+                <label for="residence" class="form-label">Country of Residence</label>
+                <input type="text" class="form-control" id="residence" name="residence" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+
+            <!-- Application Type Section -->
+            <h3>Application Type</h3>
+            <div class="mb-3">
+                <label class="form-label">What are you applying for?</label>
+                <select class="form-select" id="applicationType" name="applicationType" required>
+                    <option value="" selected disabled>Select an option</option>
+                    <option value="MSc">MSc</option>
+                    <option value="PhD">PhD</option>
+                    <option value="PostDoc">PostDoc</option>
+                </select>
+            </div>
+
+            <!-- Education Details Section -->
+            <div id="educationDetails" class="hidden">
+                <!-- BSc Details -->
+                <div id="bscDetails" class="hidden">
+                    <h4>BSc Details</h4>
+                    <div class="mb-3">
+                        <label for="bscUniversity" class="form-label">University Name</label>
+                        <input type="text" class="form-control" id="bscUniversity" name="bscUniversity">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bscCity" class="form-label">City</label>
+                        <input type="text" class="form-control" id="bscCity" name="bscCity">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bscCountry" class="form-label">Country</label>
+                        <input type="text" class="form-control" id="bscCountry" name="bscCountry">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bscGpa" class="form-label">GPA (Translate to 100/100 scale)</label>
+                        <input type="text" class="form-control" id="bscGpa" name="bscGpa">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bscDiploma" class="form-label">Upload Final Diploma</label>
+                        <input type="file" class="form-control" id="bscDiploma" name="bscDiploma">
+                    </div>
+                </div>
+
+                <!-- MSc Details -->
+                <div id="mscDetails" class="hidden">
+                    <h4>MSc Details</h4>
+                    <div class="mb-3">
+                        <label for="mscUniversity" class="form-label">University Name</label>
+                        <input type="text" class="form-control" id="mscUniversity" name="mscUniversity">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mscCity" class="form-label">City</label>
+                        <input type="text" class="form-control" id="mscCity" name="mscCity">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mscCountry" class="form-label">Country</label>
+                        <input type="text" class="form-control" id="mscCountry" name="mscCountry">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mscGpa" class="form-label">GPA (Translate to 100/100 scale)</label>
+                        <input type="text" class="form-control" id="mscGpa" name="mscGpa">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mscDiploma" class="form-label">Upload Final Diploma</label>
+                        <input type="file" class="form-control" id="mscDiploma" name="mscDiploma">
+                    </div>
+                </div>
+
+                <!-- PhD Details -->
+                <div id="phdDetails" class="hidden">
+                    <h4>PhD Details</h4>
+                    <div class="mb-3">
+                        <label for="phdUniversity" class="form-label">University Name</label>
+                        <input type="text" class="form-control" id="phdUniversity" name="phdUniversity">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phdCity" class="form-label">City</label>
+                        <input type="text" class="form-control" id="phdCity" name="phdCity">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phdCountry" class="form-label">Country</label>
+                        <input type="text" class="form-control" id="phdCountry" name="phdCountry">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phdGpa" class="form-label">GPA (Translate to 100/100 scale)</label>
+                        <input type="text" class="form-control" id="phdGpa" name="phdGpa">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phdDiploma" class="form-label">Upload Final Diploma</label>
+                        <input type="file" class="form-control" id="phdDiploma" name="phdDiploma">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferred Researcher Section -->
+            <h3>Preferred Researcher</h3>
+            <p>Please select the researcher you wish to conduct your MSc or PhD with.</p>
+            <div class="mb-3">
+                <label for="preferredResearcher" class="form-label">Preferred Researcher</label>
+                <select class="form-select" id="preferredResearcher" name="preferredResearcher">
+                    <option value="" selected disabled>Select a researcher</option>
+                    <option value="Prof. Shai Arnon">Prof. Shai Arnon</option>
+                    <option value="Prof. Edo Bar Zeev">Prof. Edo Bar Zeev</option>
+                    <option value="Dr. Elad Levintal">Dr. Elad Levintal</option>
+                    <option value="Prof. Amit Gross">Prof. Amit Gross</option>
+                    <option value="None">None</option>
+                </select>
+            </div>
+  <!-- Researcher Contact Question -->
+  <div class="mb-3">
+    <label class="form-label">Did you contact the researcher already?</label>
+    <div>
+        <input type="radio" id="contactYes" name="contactedResearcher" value="Yes" required>
+        <label for="contactYes">Yes</label>
+    </div>
+    <div>
+        <input type="radio" id="contactNo" name="contactedResearcher" value="No">
+        <label for="contactNo">No</label>
+    </div>
+</div>
+
+<!-- Area of Interest -->
+<div class="mb-3">
+    <label for="researchInterest" class="form-label">Area of Interest</label>
+    <select class="form-select" id="researchInterest" name="researchInterest">
+        <option value="" selected disabled>Select an area</option>
+        <option value="Environmental Hydrology and Microbiology">Environmental Hydrology and Microbiology</option>
+        <option value="Desalination and Water Treatment">Desalination and Water Treatment</option>
+    </select>
+</div>
+<!-- Comments Section -->
+<div class="mb-3">
+    <label for="comments" class="form-label">Comments</label>
+    <textarea class="form-control" id="comments" name="comments" rows="4" placeholder="If you are unable to fill out certain fields, please provide the missing information and an explanation here."></textarea>
+</div>
+
+            <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        const applicationType = document.getElementById("applicationType");
+        const educationDetails = document.getElementById("educationDetails");
+        const bscDetails = document.getElementById("bscDetails");
+        const mscDetails = document.getElementById("mscDetails");
+        const phdDetails = document.getElementById("phdDetails");
+    
+        applicationType.addEventListener("change", function () {
+            // Ensure the education details section is visible
+            educationDetails.classList.remove("hidden");
+    
+            // Hide all sections initially
+            bscDetails.classList.add("hidden");
+            mscDetails.classList.add("hidden");
+            phdDetails.classList.add("hidden");
+    
+            // Show fields based on the application type
+            if (this.value === "MSc") {
+                // MSc requires only BSc details
+                bscDetails.classList.remove("hidden");
+            } else if (this.value === "PhD") {
+                // PhD requires BSc and MSc details
+                bscDetails.classList.remove("hidden");
+                mscDetails.classList.remove("hidden");
+            } else if (this.value === "PostDoc") {
+                // PostDoc requires BSc, MSc, and PhD details
+                bscDetails.classList.remove("hidden");
+                mscDetails.classList.remove("hidden");
+                phdDetails.classList.remove("hidden");
+            }
+        });
+    </script>
+    
+    
+</body>
+</html>
